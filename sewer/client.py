@@ -715,6 +715,8 @@ class Client(object):
                         "dns_challenge_url": dns_challenge_url,
                     }
                 )
+            self.logger.debug("wait_dns_propagation")
+            time.sleep(25)
 
             # for a case where you want certificates for *.example.com and example.com
             # you have to create both dns records AND then respond to the challenge.
